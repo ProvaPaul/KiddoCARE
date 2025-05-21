@@ -315,3 +315,34 @@ $border-hover: #e9540f;  // Dark brown for image border
   background: linear-gradient(90deg, #e81050, #ff4880);
   color: #fff;
 }
+
+// blogs
+.section-6{
+  .card{
+    .card-body{
+      .card-title{
+        font-size: 1.5em;
+        font-weight: 700;
+        color: $primary-color;
+      }
+      .card-text{
+        font-size: 1.2em;
+        color: $text-color;
+      }
+    }
+  }
+}
+
+.blog-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.blog-img-container:hover {
+  transform: scale(1.05);
+}
+
+.blog-title-hover:hover {
+  color: #d63384; /* Bootstrap pink */
+  text-decoration: underline;
+}

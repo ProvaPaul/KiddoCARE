@@ -4,8 +4,15 @@ import Nav from 'react-bootstrap/Nav';
 import kid2 from '../../assets/images/kid4.png';
 import kid1 from '../../assets/images/kid1.jpg';
 import kid3 from '../../assets/images/kid3.jpg';
+import kid4 from '../../assets/images/kid2.jpg';
+import kid5 from '../../assets/images/kid5.png';
+import kid6 from '../../assets/images/post-1.jpg';
+import kid7 from '../../assets/images/post-2.jpg';
 import Header from '../common/Header';
 import Footer from '../common/footer';
+
+
+
 
  const Home = () => {
   return (
@@ -232,7 +239,7 @@ style={{
         <div key={idx} className="col-lg-4 col-md-6">
           <div
             className="card shadow-sm border-0 rounded h-100"
-            style={{ backgroundColor: '#ffe6ec' }} // Light pink background
+            style={{ backgroundColor: '#ffe6ec' }}
           >
             <div className="card-body text-center">
               <img
@@ -261,8 +268,34 @@ style={{
         </div>
       ))}
     </div>
+
+    {/* Pagination */}
+    <div className="d-flex justify-content-center mt-5">
+      <nav aria-label="Testimonial pagination">
+        <ul className="pagination">
+          <li className="page-item disabled">
+            <a className="page-link" href="#" tabIndex="-1" aria-disabled="true">
+              Previous
+            </a>
+          </li>
+          <li className="page-item active">
+            <a className="page-link" href="#">1</a>
+          </li>
+          <li className="page-item">
+            <a className="page-link" href="#">2</a>
+          </li>
+          <li className="page-item">
+            <a className="page-link" href="#">3</a>
+          </li>
+          <li className="page-item">
+            <a className="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </section>
+
 
 {/* activities */}
 <section className="programs-section py-5" style={{ background: 'linear-gradient(to bottom right,#e5ccff, #ffe8e2)' }}>
@@ -393,14 +426,175 @@ style={{
   `}</style>
 </section>
 
-</main>
+{/*Articles & Blog Post */}
+ 
+
+<section className="section-7 py-5" style={{ backgroundColor: '#f8f9fa' }}>
+  <div className="container-fluid blog py-5">
+    <div className="container py-5">
+      <div className='text-center section-header'>
+      <h3 className='text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 rounded'>
+        Articles & Blog Post
+      </h3>
+      <p className='m-4'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit libero assumenda officiis repellendus molestias aspernatur quasi minus porro ratione soluta, corporis nemo aperiam, earum consequatur nulla fugiat necessitatibus dolor eum.</p>
+      </div>
+
+      <div className="row g-4 justify-content-center">
+        {[1, 2, 3, 4].map((item, index) => (
+          <div className="col-md-6 col-lg-3" key={index}>
+            <div
+              className="blog-item blog-hover shadow-sm p-3"
+              style={{
+                backgroundColor: '#ffd29a', 
+                 borderRadius: '16px',
+                transition: 'all 0.3s ease',
+                height: '100%',
+              }}
+            >
+              <div
+                className="rounded-circle mx-auto blog-img-container"
+                style={{
+                  backgroundImage: `url(${kid2})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  height: '180px',
+                  width: '180px',
+                  borderRadius: '50%',
+                  transition: 'transform 0.3s ease',
+                }}
+              ></div>
+
+              <div className="text-center mt-3">
+                <h6 className="text-primary">John Doe</h6>
+                <p className="text-muted mb-2">Parenting Tips</p>
+              </div>
+
+              <div className="text-center px-3 pb-2">
+                <a
+                  href="#"
+                  className="h6 d-block text-decoration-none blog-title-hover"
+                >
+                  5 Tips to Boost Your Child's Confidence
+                </a>
+                <p className="small mt-2 mb-3">
+                  Help your child grow confident with simple and effective strategies.
+                </p>
+                <a href="#" className="btn btn-primary text-white btn-sm px-3 py-1 btn-border-radius">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+{/* <section className='section-6 bg-light py-5'>
+  <div className='container'>
+    <div className='text-center section-header'>
+      <h3 className='text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 rounded'>
+        Articles & Blog Post
+      </h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit libero assumenda officiis repellendus molestias aspernatur quasi minus porro ratione soluta, corporis nemo aperiam, earum consequatur nulla fugiat necessitatibus dolor eum.</p>
+      </div>
+      <div className='row'>
+        <div className='col-md-4'>
+        <div className='card shadow-sm border-0 rounded'>
+          <div className='card-img-top'>
+            <img src={kid1} alt='Blog Post 1' className='w-100' />
+            </div>
+            <div className='card-body p-5'>
+              <h5 className='card-title'>The Importance of Play in Early Childhood Development</h5>
+              <p className='card-text'>Play is essential for children's cognitive, social, and emotional development. It fosters creativity, problem-solving skills, and social interactions.</p>
+              <a href='#' className='btn btn-primary'>Read More</a>
+
+              </div>
+          </div>
+        </div>
+ </div>
+ </div>
+</section>  */}
+
+{/* image part */}
+<section
+  className="image-part py-5"
+  style={{
+    background: 'linear-gradient(35deg, #ff7e5f 0%, #feb47b 50%, #ff6fa1 50%, #ff4e85 100%)',
+  }}
+>
+  <div className="text-center mb-5" style={{ maxWidth: '700px', margin: '0 auto' }}>
+      <h4
+        className="mb-3 border-bottom border-3 d-inline-block px-3 pb-1 rounded-3"
+        style={{
+          fontWeight: '600',
+          color: '#fff',
+          borderColor: '#ff4e85',
+          backgroundColor: 'rgba(255, 255, 255, 0.2)',
+          backdropFilter: 'blur(5px)',
+        }}
+      >
+        Our Gallery
+      </h4>
+      <h1 className="display-4 fw-bold mb-4" style={{ color: '#fff', textShadow: '1px 1px 4px rgba(0,0,0,0.3)' }}>
+        Exclusive & Engaging Programs for Kids
+      </h1>
+      <p className="fs-5" style={{ color: '#ffe0e9' }}>
+        Carefully curated experiences to inspire curiosity and growth in every child.
+      </p>
+    </div>
+  <div className="container">
+    <div
+      className="d-flex gap-4"
+      style={{ overflowX: 'auto', paddingBottom: '10px', scrollbarWidth: 'thin' }}
+    >
+      {[kid4, kid5,kid3, kid1,kid2 ].map((src, idx) => (
+        <div key={idx} className="round-image-wrapper position-relative flex-shrink-0">
+          <img
+            src={src}
+            alt={`Event ${idx + 1}`}
+            className="img-fluid rounded-circle"
+            style={{ width: '450px', height: '450px', objectFit: 'cover', transition: 'transform 0.3s ease' }}
+          />
+          <div className="overlay d-flex align-items-center justify-content-center rounded-circle">
+            <span className="text-white fw-bold text-center">{`Event ${idx + 1}`}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <style>{`
+    .round-image-wrapper {
+      width: 450px;
+      height: 450px;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .round-image-wrapper img:hover {
+      transform: scale(1.05);
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      border-radius: 50%;
+    }
+    .round-image-wrapper:hover .overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  `}</style>
+</section>
 
 
-
-
-
-
-{/* <section className="programs-section py-5" style={{ background: 'linear-gradient(35deg, #ff7e5f 0%, #feb47b 50%, #ff6fa1 50%, #ff4e85 100%)' }}>
+{/* 
+<section className="programs-section py-5" style={{ background: 'linear-gradient(35deg, #ff7e5f 0%, #feb47b 50%, #ff6fa1 50%, #ff4e85 100%)' }}>
   <div className="container py-5">
     <div className="text-center mb-5" style={{ maxWidth: '700px', margin: '0 auto' }}>
       <h4
@@ -537,6 +731,16 @@ style={{
     }
   `}</style>
 </section> */}
+
+
+</main>
+
+
+
+
+
+
+
 
 
 <Footer/>
