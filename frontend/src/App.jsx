@@ -4,7 +4,10 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Home from './components/frontend/Home';
 import About from './components/frontend/About';
 import './assets/css/style.scss';
-
+import Login from './components/backend/Login';
+ import { ToastContainer} from 'react-toastify';
+    import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './components/backend/Dashboard';
 function App() {
 
   return (
@@ -12,9 +15,12 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>} />
-      <Route path='/about' element={<About/>} />      
+      <Route path='/about' element={<About/>} />   
+      <Route path='/admin/login' element={<Login/>} /> 
+      <Route path='/admin/dashboard' element={<Dashboard/>} /> 
     </Routes>
     </BrowserRouter>
+    <ToastContainer position="top-center"/>
     </>
   )
 }
