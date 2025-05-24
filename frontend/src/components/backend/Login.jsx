@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from './context/Auth';
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
-
+  const {login} =useContext(AuthContext);
   const onSubmit = async (data) => {
     try {
       const res = await fetch("http://localhost:8000/api/authenticate", {
@@ -26,9 +27,13 @@ const Login = () => {
       if (result.status === false || result.status === "false") {
         toast.error(result.message || "Login failed");
       } else {
-        localStorage.setItem("token", result.token);
-        localStorage.setItem("user", JSON.stringify(result.user));
-        toast.success("Login successful!");
+        const userInfo={
+          id: result.id,
+          token: result.token,
+        }
+        localStorage.setItem("userInfo", JSON.stringify(userInfo));
+        toast.success("Login successful");
+        login(userInfo);
         navigate("/admin/dashboard");
       }
     } catch (error) {
